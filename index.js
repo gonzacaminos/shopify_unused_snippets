@@ -4,6 +4,12 @@ const path = require('path');
 const searchFile = require('search-in-file');
 const process = require('process');
 const cliSelect = require('cli-select');
+
+if(!process.env.SHOPIFY_ROOT){
+    console.log(`Your SHOPIFY_ROOT .env variable isn't set.`);
+    return false
+}
+
 const root = path.resolve(__dirname, process.env.SHOPIFY_ROOT);
 
 if (!fs.existsSync(root)) {
