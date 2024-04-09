@@ -7,7 +7,8 @@ A super simple tool to find unused assets/snippets/sections on your Shopify them
 - Clone this repo and run `yarn` or `npm i` to install the dependencies.
 - Rename `.env.example` into `.env` and set your Shopify Root folder path relative to this directory, for example: '../my-shopify-theme'
 - Run `yarn start` or `npm run start` and follow the prompt.
-- Once the search has finished check the **data** folder, a `*.json` file will be created containing all matches for your search and an `unused_*.json` containing all files that aren't being used.
+- Once the search has finished you can check the **data** folder, a `*.json` file will be created containing all matches for your search and an `unused_*.json` containing all files that aren't being used.
+- You will be prompted to delete your unused files, **use with caution**.
 
 ## Disclaimer
 

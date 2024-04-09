@@ -60,8 +60,29 @@ function checkFiles(type) {
 
         console.log(`Finished reporting your ${type} files. found ${unused.length} unused.`)
 
-        if(unused.length){
-
+        if(unused.length > 0){
+            console.log(`Do you want to delete you unused ${type}?`)
+            cliSelect({
+                values: ['no', 'yes'],
+                valueRenderer: (value, selected) => {
+                    return value;
+                },
+            }).then((response) => {
+                if(response.value === 'yes'){
+                    console.log('Deleting...');
+                    unused.forEach( unused_file => {
+                        try {
+                            const file_path = path.resolve(config[type], unused_file.file)
+                            fs.unlinkSync(file_path);
+                            console.log(`- Deleted ${unused_file.file} at ${file_path}`);
+                        } catch (err) {
+                            console.error(err);
+                        }
+                    })
+                }
+            }).catch(() => {
+                console.log('Deletion cancelled');
+            });
         }
     })
 }
