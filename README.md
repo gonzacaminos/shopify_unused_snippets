@@ -1,6 +1,6 @@
 # Shopify Unused files
 
-A super simple tools to find unused assets/snippets/sections on your Shopify theme.
+A super simple tool to find unused assets/snippets/sections on your Shopify theme.
 
 ## Setup
 
